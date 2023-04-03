@@ -198,7 +198,7 @@ textarea.input {
 
 .input-number .qty-up:hover, .input-number .qty-down:hover {
   background-color: #E4E7ED;
-  color: #686767;
+  color: #484848;
 }
 
 /*-- Select input --*/
@@ -278,8 +278,8 @@ textarea.input {
 }
 
 .input-radio input[type="radio"]:checked+label span, .input-checkbox input[type="checkbox"]:checked+label span {
-  background-color: #686767;
-  border-color: #686767;
+  background-color: #525151;
+  border-color: #4e4e4e;
 }
 
 .input-radio input[type="radio"]:checked+label span:after {
@@ -1258,7 +1258,7 @@ textarea.input {
 }
 
 .checkbox-filter .input-radio label small, .checkbox-filter .input-checkbox label small {
-  color: #8D99AE;
+  color: #4f4f50;
 }
 
 /*-- Price Filter --*/
@@ -1271,7 +1271,7 @@ textarea.input {
   background-color: #FFF;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border: 1px solid #E4E7ED;
+  border: 1px solid #565656;
   border-radius: 0px;
 }
 
@@ -1338,7 +1338,7 @@ textarea.input {
   height: 40px;
   line-height: 40px;
   background-color: #FFF;
-  border: 1px solid #E4E7ED;
+  border: 1px solid #5e5e5e;
   text-align: center;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
@@ -1377,7 +1377,7 @@ textarea.input {
   line-height: 40px;
   text-align: center;
   background-color: #FFF;
-  border: 1px solid #E4E7ED;
+  border: 1px solid #747474;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
 }
@@ -1393,7 +1393,7 @@ textarea.input {
 
 .store-pagination li.active {
   background-color: #686767;
-  border-color: #686767;
+  border-color: #565656;
   color: #FFF;
   font-weight: 500;
   cursor: default;
@@ -2215,3 +2215,42 @@ textarea.input {
     margin-top: 10px;
   }
 }
+
+.alerta {
+  position: fixed;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 2px solid rgba(190, 197, 93, 0.5);
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(190, 197, 93, 0.5);
+  z-index: 9999;
+  display: none; /* adiciona essa propriedade para esconder o alerta inicialmente */
+}
+
+.alerta p {
+  font-size: 16px;
+  margin: 0;
+}
+
+.primary-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #13d405;
+  border-radius: 5px;
+  text-decoration: dotted;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.primary-btn:hover {
+  background-color: #13d405;
+}
+
+
+
+
