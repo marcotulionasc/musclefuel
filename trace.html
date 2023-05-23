@@ -211,7 +211,7 @@
 							</div>
 						</div>
 						<!-- /Billing Details -->
-                        <a href="#" onclick="testeMostrarAlerta()" class="primary-btn order-submit">Rastrear</a>
+                        <a href="#" onclick="testeMostrarStatus()" class="primary-btn order-submit">Rastrear</a>
     
                         <div class="alerta">
                           <p>O status do seu pedido é: Em andamento</p>
@@ -226,7 +226,8 @@
 							};
 					
 							// Teste unitário para a função mostrar() do objeto Alerta
-							function testeMostrarAlerta() {
+							function testeMostrarStatus() {
+								
 								var alerta = document.createElement('div');
 								alerta.classList.add('alerta');
 								alerta.style.display = 'none';
@@ -236,9 +237,9 @@
 					
 								var estiloDisplay = alerta.style.display = 'block';
 								if (estiloDisplay === 'block') {
-									console.log('Teste Mostrar Alerta: Funcionou!');
+									console.log('Teste Mostrar Status: Funcionou!');
 								} else {
-									console.error('Teste Mostrar Alerta: Falhou!');
+									console.error('Teste Mostrar Status: Falhou!');
 								}
 					
 								document.body.removeChild(alerta);

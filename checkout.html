@@ -376,8 +376,77 @@
 								Você concorda com os <a href="#">termos e condições</a>
 							</label>
 						</div>
-						<a href="#" class="primary-btn order-submit">Confirmar Pedido</a>
-						<a href="index.html" class="cancel order-submit">Cancelar Pedido</a>
+						<a href="#" onclick="" class="primary-btn order-submit">Confirmar Pedido</a>
+
+						<div class="alerta">
+							<p>O seu pedido foi confirmado!</p>
+						  </div>
+
+						<a href="index.html" onclick="" class="cancel order-submit">Cancelar Pedido</a>
+						
+						<div class="alerta">
+							<p>Seu pedido foi cancelado!</p>
+						  </div>
+						
+						  
+						  <script>
+							  var Alerta = {
+								  mostrar: function() {
+									  var alerta = document.querySelector('.alerta');
+									  alerta.style.display = 'block';
+								  }
+							  };
+					  
+							  // Teste unitário para a função mostrar() do objeto Alerta
+							  function testeMostrarAdicionarOrder() {
+								  
+								  var alerta = document.createElement('div');
+								  alerta.classList.add('alerta');
+								  alerta.style.display = 'none';
+								  document.body.appendChild(alerta);
+					  
+								  Alerta.mostrar();
+					  
+								  var estiloDisplay = alerta.style.display = 'block';
+								  if (estiloDisplay === 'block') {
+									  console.log('Teste Mostrar Adicionar Order: Funcionou!');
+								  } else {
+									  console.error('Teste Mostrar Adicionar Order: Falhou!');
+								  }
+					  
+								  document.body.removeChild(alerta);
+							  }
+
+							  function testeMostrarExcluirOrder() {
+								  
+								  var alerta = document.createElement('div');
+								  alerta.classList.add('alerta');
+								  alerta.style.display = 'none';
+								  document.body.appendChild(alerta);
+					  
+								  Alerta.mostrar();
+					  
+								  var estiloDisplay = alerta.style.display = 'block';
+								  if (estiloDisplay === 'block') {
+									  console.log('Teste Mostrar Excluir order: Funcionou!');
+								  } else {
+									  console.error('Teste Mostrar Excluir order: Falhou!');
+								  }
+					  
+								  document.body.removeChild(alerta);
+							  }
+						  </script>
+
+
+
+
+
+
+
+
+
+
+
 					</div>
 					<!-- /Order Details -->
 				</div>
