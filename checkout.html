@@ -382,7 +382,7 @@
 							<p>O seu pedido foi confirmado!</p>
 						  </div>
 
-						<a href="index.html" onclick="testeMostrarExcluirOrder()" class="cancel order-submit">Cancelar Pedido</a>
+						<a href="index.html" target="_blank" onclick="testeMostrarExcluirOrder()" class="cancel order-submit">Cancelar Pedido</a>
 
 						  
 						  <script>
@@ -416,12 +416,10 @@
 							  function testeMostrarExcluirOrder() {
 								  
 								  var alerta = document.createElement('div');
-								  alerta.classList.add('alerta');
 								  alerta.style.display = 'none';
 								  document.body.appendChild(alerta);
 					  
-								  Alerta.mostrar();
-					  
+												  
 								  var estiloDisplay = alerta.style.display = 'block';
 								  if (estiloDisplay === 'block') {
 									  console.log('Teste Mostrar Excluir order: Funcionou!');
