@@ -225,21 +225,7 @@
 					  const codPedido = codPedidoInput.value;
 				  
 					  if (validarCPF(cpf)) {
-						// Aqui você pode fazer a lógica para rastrear o pedido com o CPF e o código do pedido fornecidos
-						// Por exemplo, você pode fazer uma requisição AJAX para obter o status do pedido e exibir na div de alerta
-				  
-						// Simulando uma resposta de sucesso com o status "Em andamento"
-						const statusPedido = "Em andamento";
-				  
-						// Exibindo o status do pedido na div de alerta
-						statusPedidoDiv.textContent = "O status do seu pedido é: " + statusPedido;
-						statusPedidoDiv.style.display = "block";
-					  } else {
-						alert("CPF inválido");
-					  }
-					}
-				  
-					function validarCPF(cpf) {
+						function validarCPF(cpf) {
 						cpf = cpf.replace(/[^\d]+/g, ''); // Remove caracteres não numéricos
 						if (cpf.length !== 11) {
 							return false;
@@ -273,8 +259,18 @@
 
 						return true;
 						}
+						const statusPedido = "Em andamento";
+				  
+						// Exibindo o status do pedido na div de alerta
+						statusPedidoDiv.textContent = "O status do seu pedido é: " + statusPedido;
+						statusPedidoDiv.style.display = "block";
+					  } else {
+						alert("CPF inválido");
+					  }
+  }
+
+		
 				  </script>
-                        
 
                 </div>
 			</div>
