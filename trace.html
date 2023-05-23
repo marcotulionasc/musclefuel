@@ -218,13 +218,32 @@
                         </div>
                         
                         <script>
-                          var Alerta = {
-           					 mostrar: function() {
-                				var alerta = document.querySelector('.alerta');
-                					alerta.style.display = 'block';
-            					}
-       					 };
-                        </script>
+							var Alerta = {
+								mostrar: function() {
+									var alerta = document.querySelector('.alerta');
+									alerta.style.display = 'block';
+								}
+							};
+					
+							// Teste unitário para a função mostrar() do objeto Alerta
+							function testeMostrarAlerta() {
+								var alerta = document.createElement('div');
+								alerta.classList.add('alerta');
+								alerta.style.display = 'none';
+								document.body.appendChild(alerta);
+					
+								Alerta.mostrar();
+					
+								var estiloDisplay = getComputedStyle(alerta).getPropertyValue('display');
+								if (estiloDisplay === 'block' || estiloDisplay === 'flex') {
+									console.log('Teste Mostrar Alerta: Passou!');
+								} else {
+									console.error('Teste Mostrar Alerta: Falhou!');
+								}
+					
+								document.body.removeChild(alerta);
+							}
+						</script>
 
                 </div>
 			</div>
