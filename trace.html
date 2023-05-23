@@ -211,17 +211,19 @@
 							</div>
 						</div>
 						<!-- /Billing Details -->
-                        <a href="#" onclick="mostrarAlerta()" class="primary-btn order-submit">Rastrear</a>
+                        <a href="#" onclick="Alerta.mostrar()" class="primary-btn order-submit">Rastrear</a>
     
                         <div class="alerta">
                           <p>O status do seu pedido é: Em andamento</p>
                         </div>
                         
                         <script>
-                          function mostrarAlerta() {
-                            var alerta = document.querySelector('.alerta');
-                            alerta.style.display = 'block';
-                          }
+                          var Alerta = {
+           					 mostrar: function() {
+                				var alerta = document.querySelector('.alerta');
+                					alerta.style.display = 'block';
+            					}
+       					 };
                         </script>
 
                 </div>
