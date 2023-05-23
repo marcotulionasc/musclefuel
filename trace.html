@@ -193,84 +193,59 @@
 
                 <!-- row -->
 				<div class="row">
+
 					<div class="col-md-7">
-					  <!-- Billing Details -->
-					  <div class="billing-details">
-						<div class="section-title">
-						  <h3 class="title">Rastrear seu pedido</h3>
-						</div>
-						<div class="form-group">
-						  <input class="input" type="text" name="cpf" placeholder="Digite seu CPF">
-						</div>
-						<div class="form-group">
-						  <input class="input" type="text" name="CodPedido" placeholder="Digite o código do seu pedido">
-						</div>
-					  </div>
-					</div>
-				  </div>
-				  <!-- /Billing Details -->
-				  <a href="#" onclick="rastrearPedido()" class="primary-btn order-submit">Rastrear</a>
-				  
-				  <div class="alerta" style="display: none;">
-					<p id="statusPedido"></p>
-				  </div>
-				  
-				  <script>
-					  function rastrearPedido() {
-					  const cpfInput = document.querySelector('input[name="CPF"]');
-					  const codPedidoInput = document.querySelector('input[name="CodPedido"]');
-					  const statusPedidoDiv = document.getElementById("statusPedido");
-				  
-					  const cpf = cpfInput.value.replace(/[^\d]+/g, '');
-					  const codPedido = codPedidoInput.value;
-				  
-					  if (validarCPF(cpf)) {
-						function validarCPF(cpf) {
-						cpf = cpf.replace(/[^\d]+/g, ''); // Remove caracteres não numéricos
-						if (cpf.length !== 11) {
-							return false;
-						}
-
-						// Verifica se todos os dígitos são iguais
-						if (/^(\d)\1+$/.test(cpf)) {
-							return false;
-						}
-
-						// Calcula o primeiro dígito verificador
-						let soma = 0;
-						for (let i = 0; i < 9; i++) {
-							soma += parseInt(cpf.charAt(i)) * (10 - i);
-						}
-						let resto = soma % 11;
-						let digitoVerificador1 = resto < 2 ? 0 : 11 - resto;
-
-						// Calcula o segundo dígito verificador
-						soma = 0;
-						for (let i = 0; i < 10; i++) {
-							soma += parseInt(cpf.charAt(i)) * (11 - i);
-						}
-						resto = soma % 11;
-						let digitoVerificador2 = resto < 2 ? 0 : 11 - resto;
-
-						// Verifica se os dígitos verificadores são válidos
-						if (parseInt(cpf.charAt(9)) !== digitoVerificador1 || parseInt(cpf.charAt(10)) !== digitoVerificador2) {
-							return false;
-						}
-
-						return true;
-						}
-						const statusPedido = "Em andamento";
-				  
-						// Exibindo o status do pedido na div de alerta
-						statusPedidoDiv.textContent = "O status do seu pedido é: " + statusPedido;
-						statusPedidoDiv.style.display = "block";
-					  } else {
-						alert("CPF inválido");
-					  }
-  }
-
+						<!-- Billing Details -->
+						<div class="billing-details">
+							<div class="section-title">
+								<h3 class="title">Rastrear seu pedido</h3>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="CPF" placeholder="Digite seu CPF">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="CodPedido" placeholder="Digite o código do seu pedido">
+							</div>
 		
-				  </script>
+								</div>
+							</div>
+						</div>
+						<!-- /Billing Details -->
+                        <a href="#" onclick="testeMostrarStatus()" class="primary-btn order-submit">Rastrear</a>
+    
+                        <div class="alerta">
+                          <p>O status do seu pedido é: Em andamento</p>
+                        </div>
+                        
+                        <script>
+							var Alerta = {
+								mostrar: function() {
+									var alerta = document.querySelector('.alerta');
+									alerta.style.display = 'block';
+								}
+							};
+					
+							// Teste unitário para a função mostrar() do objeto Alerta
+							function testeMostrarStatus() {
+								
+								var alerta = document.createElement('div');
+								alerta.classList.add('alerta');
+								alerta.style.display = 'none';
+								document.body.appendChild(alerta);
+					
+								Alerta.mostrar();
+					
+								var estiloDisplay = alerta.style.display = 'block';
+								if (estiloDisplay === 'block') {
+									console.log('Teste Mostrar Status: Funcionou!');
+								} else {
+									console.error('Teste Mostrar Status: Falhou!');
+								}
+					
+								document.body.removeChild(alerta);
+							}
+
+													</script>
 
                 </div>
 			</div>
