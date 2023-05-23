@@ -234,8 +234,8 @@
 					
 								Alerta.mostrar();
 					
-								var estiloDisplay = getComputedStyle(alerta).getPropertyValue('display');
-								if (estiloDisplay === 'block' || estiloDisplay === 'flex') {
+								var estiloDisplay = getComputedStyle(alerta).getPropertyValue('none');
+								if (estiloDisplay === 'block') {
 									console.log('Teste Mostrar Alerta: Passou!');
 								} else {
 									console.error('Teste Mostrar Alerta: Falhou!');
