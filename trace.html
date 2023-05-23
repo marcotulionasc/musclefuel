@@ -234,7 +234,7 @@
 					
 								Alerta.mostrar();
 					
-								var estiloDisplay = getComputedStyle(alerta).getPropertyValue('none');
+								var estiloDisplay = alerta.style.display = 'block';
 								if (estiloDisplay === 'block') {
 									console.error('Teste Mostrar Alerta: Falhou!');
 								} else {
