@@ -2227,7 +2227,7 @@ textarea.input {
   padding: 20px;
   box-shadow: 0px 0px 10px rgba(190, 197, 93, 0.5);
   z-index: 9999;
-  display: none; /* adiciona essa propriedade para esconder o alerta inicialmente */
+  display: block; /* adiciona essa propriedade para esconder o alerta inicialmente */
 }
 
 .alerta p {
